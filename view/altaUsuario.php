@@ -37,7 +37,7 @@
         <form class="form-user from-max-width shadow bg-light rounded-3" action="../controller/checkUsuario.php" method="post" class="needs-validation">
             <div class=" text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
-                <h2>Atla de Usuario</h2>
+                <h2>Alta de Usuario</h2>
                 <p class="lead">Página que nos permite dar de alta un usuario para luego login</p>
             </div>
 
