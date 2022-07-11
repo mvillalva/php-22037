@@ -8,20 +8,20 @@ function menu() {
                   <ul class="nav">
                     <li><a href="inicio.php">Inicio</i></a></li>
                     <li>
-                      <a>Servicios</a>
+                      <a href="#">Servicios</a>
                       <ul>
                         <li><a href="#">Venta</a></li>
                         <li><a href="#">Colocación</a></li>
                         <li><a href="#">Reparación</a></li>
                         <li>
-                          <a>Pedidos</a>
+                          <a href="#">Pedidos</a>
                           <ul>
                             <li><a href="pedido.php?op=m">Crear Pedido</a></li>                            
                             <li><a href="listadoPedidos.php">Listado de Pedidos</a></li>
                           </ul>
                         </li>
                         <li>
-                          <a>Usuarios</a>
+                          <a href="#">Usuarios</a>
                           <ul>
                             <li><a href="altaUsuario.php?op=m">Crear Usuario</a></li>
                             <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            
@@ -30,7 +30,7 @@ function menu() {
                       </ul>
                     </li>
                     <li>
-                      <a>Acerca de</a>
+                      <a href="#">Acerca de</a>
                       <ul>
                         <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#historia">Historia</a></li>
