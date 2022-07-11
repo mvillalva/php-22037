@@ -29,7 +29,7 @@
             <p class="my-2 text-danger">Usuario o password incorrectos, por favor vuelva a ingresarlos.</p>
             <button type="submit" class="btn btn-primary btn-lg btn-block w-100 mb-3">Ingresar <i class="fas fa-sign-in-alt"></i></button>
             <div> 
-                <a class="link" href="view/altaUsuario.php">Registrate</a>
+                <a class="link" href="altaUsuario.php">Registrate</a>
             </div>            
         </form>
     </div>

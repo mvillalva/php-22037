@@ -1,6 +1,6 @@
 <?php
-    require('../controller/checkSession.php');
-    require("menu.php");
+    require_once('../controller/checkSession.php');
+    require_once("menu.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -75,21 +75,10 @@
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <label for="state">Provincia</label>
-                            <select class="form-select" id="state" name="state" required>
-                                <option value="">Seleccioná...</option>
-                                <option value="1">Buenos Aires</option>
-                                <option value="2">Tucumán</option>
-                            </select>
-                            <div class="invalid-feedback">Seleccioná una provincia válida.</div>
+                            <?php include('combos/provincias.php'); ?>
                         </div>
                         <div class="col-md-5 mb-3">
-                            <label for="country">Localidad</label>
-                            <select class="form-select" id="country" name="country" required>
-                                <option value="">Seleccioná...</option>
-                                <option value="1">Moreno</option>
-                            </select>
-                            <div class="invalid-feedback">Seleccioná una localidad válida.</div>
+                            <?php include('combos/localidades.php'); ?>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="zip">Cod.Postal</label>

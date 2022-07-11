@@ -2,8 +2,8 @@
 class ProvinciaDAO {
       
     public function listarProvincias() {
-        require("../dataBase/ConexionDB.php");
-        require("../model/Provincia.php");
+        require_once("../dataBase/ConexionDB.php");
+        require_once("../model/Provincia.php");
 
         $con = new ConexionDB();
         $con->conectar();

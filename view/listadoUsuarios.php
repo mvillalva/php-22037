@@ -1,6 +1,6 @@
 <?php
-require('../controller/checkSession.php');
-require("menu.php");
+require_once('../controller/checkSession.php');
+require_once("menu.php");
 ?>
 
 <!doctype html>
@@ -41,7 +41,7 @@ require("menu.php");
                     </thead>
                     <tbody>
                         <?php
-                        require("../dao/UsuarioDAO.php");
+                        require_once("../dao/UsuarioDAO.php");
                         $dao = new UsuarioDAO();
                         $listaUsu = $dao->listarUsuarios();
                         //var_dump($listaUsu);

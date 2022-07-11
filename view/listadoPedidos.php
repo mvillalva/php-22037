@@ -1,6 +1,6 @@
 <?php
-require('../controller/checkSession.php');
-require("menu.php");
+require_once('../controller/checkSession.php');
+require_once("menu.php");
 ?>
 
 <!doctype html>
@@ -45,7 +45,7 @@ require("menu.php");
                     </thead>
                     <tbody>
                         <?php
-                        require("../dao/PedidoDAO.php");
+                        require_once("../dao/PedidoDAO.php");
                         $pedidoDAO = new PedidoDAO();
                         $listaPedidos = $pedidoDAO->listarPedidos();
 

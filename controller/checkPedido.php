@@ -4,8 +4,8 @@
     $usuario = $_POST['username'];
     $mail = $_POST['email'];
     $lugarentrega = $_POST['address'];
-    $localidad = $_POST['country'];
-    $provincia = $_POST['state'];
+    $localidad = $_POST['localidad'];
+    $provincia = $_POST['provincia'];
     $codpostal = $_POST['zip'];
     $formadepago = $_POST['paymentMethod'];
     $tarjtitular = $_POST['cc-name'];
@@ -15,10 +15,10 @@
 
     //Este paso es necesario porque trabajamos con POO
     //Creamos un objeto Pedido para luego guardarlo en la DB
-    require("../model/Pedido.php");
+    require_once("../model/Pedido.php");
     $pedido = new Pedido($nombre, $apellido, $usuario, $mail, $lugarentrega, $localidad, $provincia, $codpostal, $formadepago, $tarjtitular, $tarjnumero, $tarjvto, $tarjclave);
     
-    require("../dao/PedidoDAO.php");
+    require_once("../dao/PedidoDAO.php");
 
     $pedidoDAO = new PedidoDAO();
     $guardoOk = $pedidoDAO->guardarPedido($pedido);
