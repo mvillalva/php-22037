@@ -7,8 +7,8 @@
   $lista = $dao->listarLocalidades();  
 
   foreach ($lista as $objeto) {
-    $html = '<option value="' . $objeto->getIdlocalidad() . ' ?>">' . $objeto->getNombre() . '</option>';
-    return $html;
+    $html = '<option value="' . $objeto->getIdlocalidad() . '">' . $objeto->getNombre() . '</option>';
+    echo $html;
   }
 ?>
 </select>

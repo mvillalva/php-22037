@@ -7,8 +7,8 @@
   $lista = $dao->listarProvincias();  
 
   foreach ($lista as $objeto) {
-    $html = '<option value="' . $objeto->getIdProvincia() . ' ?>">' . $objeto->getNombre() . '</option>';
-    return $html;
+    $html = '<option value="' . $objeto->getIdProvincia() . '">' . $objeto->getNombre() . '</option>';
+    echo $html;
   }
 ?>
 </select>

@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `localidades`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `localidades` (
   `idlocalidad` int NOT NULL AUTO_INCREMENT,
-  `nombrelocalidad` varchar(40) NOT NULL,
+  `nombre` varchar(60) NOT NULL,
   `idprovlocalidad` int NOT NULL,
   PRIMARY KEY (`idlocalidad`),
   UNIQUE KEY `LocProvincia` (`idlocalidad`),

@@ -13,7 +13,7 @@ class LocalidadDAO {
             //todo: cargar todos los datos del pedido
             $locObj = new Localidad(  $localidad["idlocalidad"]  , 
                                       $localidad["nombre"]       ,
-                                      $localidad["idprovincia"]
+                                      $localidad["idprovlocalidad"]
                                     );
 
             $listLocalidades[] = $locObj;
