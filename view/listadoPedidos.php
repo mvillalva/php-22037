@@ -30,44 +30,45 @@ require_once("menu.php");
                 <h1>Pedidos</h1>
                 <p class="lead">Listado de Pedidos pendientes</p>
             </div>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm bg-light">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">e-mail</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Localidad</th>
+                            <th scope="col">Provincia</th>
+                            <th scope="col">Código Postal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        require_once("../dao/PedidoDAO.php");
+                        $pedidoDAO = new PedidoDAO();
+                        $listaPedidos = $pedidoDAO->listarPedidos();
 
-            <table class="table table-hover table-sm bg-light">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">#ID</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">e-mail</th>
-                        <th scope="col">Dirección</th>
-                        <th scope="col">Localidad</th>
-                        <th scope="col">Provincia</th>
-                        <th scope="col">Código Postal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    require_once("../dao/PedidoDAO.php");
-                    $pedidoDAO = new PedidoDAO();
-                    $listaPedidos = $pedidoDAO->listarPedidos();
+                        foreach ($listaPedidos as $pedido) {
+                            $html = "<tr>";
+                            $html .= "<td>" . $pedido->getIdPedido()      . "</td>";
+                            $html .= "<td>" . $pedido->getApellido()      . "</td>";
+                            $html .= "<td>" . $pedido->getNombre()        . "</td>";
+                            $html .= "<td>" . $pedido->getMail()          . "</td>";
+                            $html .= "<td>" . $pedido->getLugarEntrega()  . "</td>";
+                            $html .= "<td>" . $pedido->getLocalidad()     . "</td>";
+                            $html .= "<td>" . $pedido->getProvincia()     . "</td>";
+                            $html .= "<td>" . $pedido->getCodPostal()     . "</td>";
+                            $html .= "</tr>";
+                            echo $html;
+                        }
+                        ?>
 
-                    foreach ($listaPedidos as $pedido) {
-                        $html = "<tr>";
-                        $html .= "<td>" . $pedido->getIdPedido()      . "</td>";
-                        $html .= "<td>" . $pedido->getApellido()      . "</td>";
-                        $html .= "<td>" . $pedido->getNombre()        . "</td>";
-                        $html .= "<td>" . $pedido->getMail()          . "</td>";
-                        $html .= "<td>" . $pedido->getLugarEntrega()  . "</td>";
-                        $html .= "<td>" . $pedido->getLocalidad()     . "</td>";
-                        $html .= "<td>" . $pedido->getProvincia()     . "</td>";
-                        $html .= "<td>" . $pedido->getCodPostal()     . "</td>";
-                        $html .= "</tr>";
-                        echo $html;
-                    }
-                    ?>
+                    </tbody>
 
-                </tbody>
-
-            </table>
+                </table>
+            </div>
         </div>
     </div>
 

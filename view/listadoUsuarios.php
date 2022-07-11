@@ -31,37 +31,37 @@ require_once("menu.php");
                 <p class="lead">Listado de Usuarios</p>
             </div>
 
-            <table class="table table-hover table-sm bg-light">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col">#ID</th>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Contraseña</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    require_once("../dao/UsuarioDAOC.php");
-                    $dao = new UsuarioDAOC();
-                    $listaUsu = $dao->listarUsuarios();
-                    //var_dump($listaUsu);
-
-                    for ($i = 0; $i < count($listaUsu); $i++) {
-                    ?>
+            <div class="table-responsive">
+                <table class="table table-hover table-sm bg-light">
+                    <thead class="table-dark">
                         <tr>
-                            <td><?php echo $listaUsu[$i]["idusuario"] ?></td>
-                            <td><?php echo $listaUsu[$i]["usuario"] ?></td>
-                            <td><?php echo $listaUsu[$i]["clave"] ?></td>
+                            <th scope="col">#ID</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col">Contraseña</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        require_once("../dao/UsuarioDAOC.php");
+                        $dao = new UsuarioDAOC();
+                        $listaUsu = $dao->listarUsuarios();
+                        //var_dump($listaUsu);
 
-                    <?php
-                    }
-                    ?>
+                        for ($i = 0; $i < count($listaUsu); $i++) {
+                        ?>
+                            <tr>
+                                <td><?php echo $listaUsu[$i]["idusuario"] ?></td>
+                                <td><?php echo $listaUsu[$i]["usuario"] ?></td>
+                                <td><?php echo $listaUsu[$i]["clave"] ?></td>
+                            </tr>
 
-                </tbody>
+                        <?php
+                        }
+                        ?>
 
-            </table>
-
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
