@@ -21,7 +21,7 @@ function menu() {
                           </ul>
                         </li>
                         <li>
-                          <a href="">Usuarios</a>
+                          <a>Usuarios</a>
                           <ul>
                             <li><a href="altaUsuario.php?op=m">Crear Usuario</a></li>
                             <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            

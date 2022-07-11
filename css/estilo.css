@@ -100,7 +100,8 @@ ul {
 
 .nav li:hover > ul {
     width: 100vw;
-    display: block;    
+    display: block;
+    z-index: 3;
 }
 
 .nav > li {
@@ -234,7 +235,6 @@ ul {
 
     .nav li:hover > ul {
         width: initial;
-        z-index: 3;
     }
 
     .nav li a {
