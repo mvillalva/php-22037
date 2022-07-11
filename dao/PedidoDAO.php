@@ -2,7 +2,7 @@
 class PedidoDAO {
 
     public function guardarPedido($pedido) {
-        require_once("../dataBase/ConexionDB.php");
+        require("../dataBase/ConexionDB.php");
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
     
@@ -30,8 +30,8 @@ class PedidoDAO {
     }
         
     public function listarPedidos() {
-        require_once("../dataBase/ConexionDB.php");
-        require_once("../model/Pedido.php");
+        require("../dataBase/ConexionDB.php");
+        require("../model/Pedido.php");
 
         $con = new ConexionDB();
         $con->conectar();

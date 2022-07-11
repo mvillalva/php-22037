@@ -2,8 +2,8 @@
 class LocalidadDAO {
       
     public function listarLocalidades() {
-        require_once("../dataBase/ConexionDB.php");
-        require_once("../model/Localidad.php");
+        require("../dataBase/ConexionDB.php");
+        require("../model/Localidad.php");
 
         $con = new ConexionDB();
         $con->conectar();

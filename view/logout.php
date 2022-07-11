@@ -1,6 +1,6 @@
 <?php
-    require_once('../controller/checkSession.php');
-    require_once('../controller/sessionLogout.php')
+    require('../controller/checkSession.php');
+    require('../controller/sessionLogout.php')
 ?>
 
 <!DOCTYPE html>

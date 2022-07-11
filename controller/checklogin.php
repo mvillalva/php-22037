@@ -6,7 +6,7 @@
     $usu=$_POST["inputEmail"];
     $pass=$_POST["inputPassword"];
 
-    require_once("../dao/UsuarioDAO.php");
+    require("../dao/UsuarioDAO.php");
 
     $usuarioDAO = new UsuarioDAO();
     $loginValido = $usuarioDAO->validarUsuYPass($usu, $pass);

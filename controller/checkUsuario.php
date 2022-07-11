@@ -3,7 +3,7 @@
     $password = isset($_POST["password"])?$_POST["password"]:'';
     $nombre   = isset($_POST["nombre"])?$_POST["nombre"]:'';
 
-    require_once("../dao/UsuarioDAO.php");
+    require("../dao/UsuarioDAO.php");
 
     $usuarioDAO = new UsuarioDAO();
     $guardoOk = $usuarioDAO->guardarUsuario($usuario, $password, $nombre);

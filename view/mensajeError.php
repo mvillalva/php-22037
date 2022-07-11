@@ -1,5 +1,5 @@
 <?php
-    require_once("menu.php");
+    require("menu.php");
 
     if (!isset($_SESSION)) {
 		session_start();

@@ -1,6 +1,6 @@
 <?php
-require_once('../controller/checkSession.php');
-require_once("menu.php");
+require('../controller/checkSession.php');
+require("menu.php");
 ?>
 
 <!doctype html>
@@ -13,7 +13,7 @@ require_once("menu.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <?php include_once('header.php'); ?>
+    <?php include('header.php'); ?>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
@@ -41,7 +41,7 @@ require_once("menu.php");
                     </thead>
                     <tbody>
                         <?php
-                        require_once("../dao/UsuarioDAO.php");
+                        require("../dao/UsuarioDAO.php");
                         $dao = new UsuarioDAO();
                         $listaUsu = $dao->listarUsuarios();
                         //var_dump($listaUsu);
@@ -65,7 +65,7 @@ require_once("menu.php");
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include_once('footer.php'); ?>
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

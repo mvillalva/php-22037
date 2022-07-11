@@ -1,6 +1,6 @@
 <?php 
 
-require_once('ConfigDB.php');
+require('ConfigDB.php');
 
 class ConexionDB {
     private $host;

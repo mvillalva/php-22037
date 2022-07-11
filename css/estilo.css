@@ -229,11 +229,12 @@ ul {
     }
 
     .bar > li > ul {
-        display: block;        
+        display: block;
     }
 
     .nav li:hover > ul {
         width: initial;
+        z-index: 3;
     }
 
     .nav li a {

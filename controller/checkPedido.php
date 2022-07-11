@@ -15,10 +15,10 @@
 
     //Este paso es necesario porque trabajamos con POO
     //Creamos un objeto Pedido para luego guardarlo en la DB
-    require_once("../model/Pedido.php");
+    require("../model/Pedido.php");
     $pedido = new Pedido($nombre, $apellido, $usuario, $mail, $lugarentrega, $localidad, $provincia, $codpostal, $formadepago, $tarjtitular, $tarjnumero, $tarjvto, $tarjclave);
     
-    require_once("../dao/PedidoDAO.php");
+    require("../dao/PedidoDAO.php");
 
     $pedidoDAO = new PedidoDAO();
     $guardoOk = $pedidoDAO->guardarPedido($pedido);

@@ -1,5 +1,5 @@
 <?php 
-    require_once("menu.php");
+    require("menu.php");
     
     if (!isset($_SESSION)) {
 		session_start();
@@ -18,7 +18,7 @@
     <title>PHP - Alta de usuario</title>
 
     <!-- bootstrap -->
-    <?php include_once('header.php'); ?>
+    <?php include('header.php'); ?>
     <link href="../css/signin.css" rel="stylesheet" />
 </head>
 
@@ -83,7 +83,7 @@
     </div>
 
     <!-- bootstrap -->
-    <?php include_once('footer.php'); ?>
+    <?php include('footer.php'); ?>
 </body>
 
 </html>

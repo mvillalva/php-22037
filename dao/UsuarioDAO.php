@@ -2,7 +2,7 @@
 class UsuarioDAO {
 
     public function validarUsuYPass($usu, $pass) {
-        require_once("../dataBase/ConexionDB.php");
+        require("../dataBase/ConexionDB.php");
 
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
@@ -20,7 +20,7 @@ class UsuarioDAO {
     }
 
     public function guardarUsuario($usuario, $password, $nombre) {
-        require_once("../dataBase/ConexionDB.php");
+        require("../dataBase/ConexionDB.php");
 
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
@@ -33,7 +33,7 @@ class UsuarioDAO {
     }
 
     public function listarUsuarios() {
-        require_once("../dataBase/ConexionDB.php");
+        require("../dataBase/ConexionDB.php");
 
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
