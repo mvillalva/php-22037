@@ -3,9 +3,9 @@
     $password = isset($_POST["password"])?$_POST["password"]:'';
     $nombre   = isset($_POST["nombre"])?$_POST["nombre"]:'';
 
-    require_once("../dao/UsuarioDAOC.php");
+    require_once("../dao/UsuarioDAO.php");
 
-    $usuarioDAO = new UsuarioDAOC();
+    $usuarioDAO = new UsuarioDAO();
     $guardoOk = $usuarioDAO->guardarUsuario($usuario, $password, $nombre);
 
     if ($guardoOk) {

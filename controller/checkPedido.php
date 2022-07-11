@@ -24,9 +24,10 @@
     $guardoOk = $pedidoDAO->guardarPedido($pedido);
 
     if ($guardoOk) {
-        echo "El pedido se agregó correctamente <br>";
+        header("Location: ../view/mensajeOk.php");
+        exit;    
     } else {
-        echo "Error en agregar pedido <br>";
-    }
-  
+        header("Location: ../view/mensajeError.php");
+        exit;    
+    }  
 ?>

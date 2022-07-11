@@ -1,5 +1,5 @@
 <?php
-    require('../controller/checkSession.php');
+    require_once('../controller/checkSession.php');
     require_once("menu.php");
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 
 <body class="bg-grad">
     <header>
-        <?= menu_bs('e'); ?>
+        <?= menu_bs('c'); ?>
     </header>
     <div class="d-flex justify-content-center align-items-center my-7">
         <div class="container bg-light rounded-3 shadow">
@@ -59,7 +59,7 @@
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                            <label for="email">Email <span class="text-muted">(Opcional)</span></label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="tumail@gmail.com" />
                             <div class="invalid-feedback">El e-mail es inválido.</div>
                         </div>
@@ -68,20 +68,12 @@
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="address">Lugar de Entrega</label>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="Calle, n°, localidad..." required />
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Calle, n°, piso, dpto, ..." required />
                             <div class="invalid-feedback">Faltó ingresar el domicilio de entrega.</div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-5 mb-3">
-                            <label for="country">Localidad</label>
-                            <select class="form-select" id="country" name="country" required>
-                                <option value="">Seleccioná...</option>
-                                <option value="1">Moreno</option>
-                            </select>
-                            <div class="invalid-feedback">Seleccioná una localidad válida.</div>
-                        </div>
                         <div class="col-md-4 mb-3">
                             <label for="state">Provincia</label>
                             <select class="form-select" id="state" name="state" required>
@@ -90,6 +82,14 @@
                                 <option value="2">Tucumán</option>
                             </select>
                             <div class="invalid-feedback">Seleccioná una provincia válida.</div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <label for="country">Localidad</label>
+                            <select class="form-select" id="country" name="country" required>
+                                <option value="">Seleccioná...</option>
+                                <option value="1">Moreno</option>
+                            </select>
+                            <div class="invalid-feedback">Seleccioná una localidad válida.</div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="zip">Cod.Postal</label>

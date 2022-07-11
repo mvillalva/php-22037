@@ -28,7 +28,7 @@
         if ($sesion_activa) {
         ?>
             <header>
-                <?= menu_bs('x'); ?>
+                <?= menu_bs(''); ?>
             </header>
         <?php
         }
@@ -38,7 +38,7 @@
         <div class="container text-center bg-light rounded-3 shadow w-75 w-lg-50">
             <div class="py-4 text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
-                <h2 class="text-danger mb-5">La operación se realizó correctamente</h2>
+                <h2 class="text-success mb-5">La operación se realizó correctamente</h2>
                 <a class="btn btn-outline-primary btn-lg" href="inicio.php">Inicio</a>
             </div>
         </div>

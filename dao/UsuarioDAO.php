@@ -1,50 +1,53 @@
 <?php 
-
-/**
- * Clase donde se realizan todas las consultas, altas y
- * modificaciones en la tabla Usuario
- */
 class UsuarioDAO {
 
-    public function validarUsuarioYPass($usuario, $contrasenia) {
-        require_once("../dataBase/ConexionDB.php");
-
-        $conexionDB = new ConexionDB();
-        $conexionDB->conectar(); //conecta php con la base de datos MySql
-    
-        $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND clave = '$contrasenia'";
-        $conexionDB->ejecutar($sql);
-    
-        return $conexionDB->cantFilas() > 0;
-    }
-
-    public function validarUsuario($usuario) {
+    public function validarUsuYPass($usu, $pass) {
         require_once("../dataBase/ConexionDB.php");
 
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
-    
-        $sql = "SELECT * FROM usuarios WHERE usuario = $usuario";
+
+        $sql ="SELECT * FROM usuarios WHERE usuario = '$usu' AND clave='$pass'";
         $conexionDB->ejecutar($sql);
-    
-        return $conexionDB->cantFilas() > 0;        
+
+        $existeUsuYPass = $conexionDB->cantFilas() > 0;
+        if ($existeUsuYPass) {
+            return true;
+        } else {
+            return false;
+        }
+        
     }
 
-    public function guardarUsuario($usuario) {
+    public function guardarUsuario($usuario, $password, $nombre) {
         require_once("../dataBase/ConexionDB.php");
+
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
 
-        $sql = "INSERT INTO `usuarios`(`usuario`, `clave`, `nombreyapellido`) 
-        VALUES (
-            '{$usuario->getUsuario()}', 
-            '{$usuario->getClave()}', 
-            '')";
+        $sql="INSERT INTO usuarios(usuario, clave, nombreyapellido) VALUES ('$usuario','$password','$nombre')";
 
-        $conexionDB->ejecutar($sql);    
+        $conexionDB->ejecutar($sql);
 
         return $conexionDB->cantFilas() > 0;
     }
+
+    public function listarUsuarios() {
+        require_once("../dataBase/ConexionDB.php");
+
+        $conexionDB = new ConexionDB();
+        $conexionDB->conectar();
+
+        $sql="SELECT * FROM usuarios";
+        $result = $conexionDB->ejecutar($sql);
+
+        while ($usu = $result->fetch_assoc()) {
+            $listaUsu[] = $usu;
+        }
+
+        return $listaUsu;    
+    }
+
 }
 
 ?>

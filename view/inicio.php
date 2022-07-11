@@ -1,5 +1,5 @@
 <?php 
-    require('../controller/checkSession.php');
+    require_once('../controller/checkSession.php');
     require_once("menu.php");
 ?>
 

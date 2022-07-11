@@ -16,9 +16,15 @@ function menu() {
                         <li>
                           <a>Pedidos</a>
                           <ul>
-                            <li><a href="altaUsuario.php?op=m">Crear Usuario</a></li>
-                            <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>
+                            <li><a href="pedido.php?op=m">Crear Pedido</a></li>                            
                             <li><a href="listadoPedidos.php">Listado de Pedidos</a></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="">Usuarios</a>
+                          <ul>
+                            <li><a href="altaUsuario.php?op=m">Crear Usuario</a></li>
+                            <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            
                           </ul>
                         </li>
                       </ul>
@@ -64,9 +70,15 @@ function menu_bs($active) {
                                 <li class="dropdown-item dropdown-submenu p-0">
                                     <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                        <li><a class="dropdown-item '.($active == 'a'? 'active':'').'" navbar href="altaUsuario.php?op=m">Crear Usuario</a></li>
-                                        <li><a class="dropdown-item '.($active == 'u'? 'active':'').'" href="listadoUsuarios.php">Lista de Usuarios</a></li>
+                                        <li><a class="dropdown-item '.($active == 'c'? 'active':'').'" navbar href="pedido.php?op=m">Crear Pedido</a></li>
                                         <li><a class="dropdown-item '.($active == 'p'? 'active':'').'" href="listadoPedidos.php">Lista de Pedidos</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item dropdown-submenu p-0">
+                                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                        <li><a class="dropdown-item '.($active == 'a'? 'active':'').'" navbar href="altaUsuario.php?op=m">Crear Usuario</a></li>
+                                        <li><a class="dropdown-item '.($active == 'u'? 'active':'').'" href="listadoUsuarios.php">Lista de Usuarios</a></li>                                        
                                     </ul>
                                 </li>
                             </ul>
