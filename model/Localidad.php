@@ -1,14 +1,16 @@
 <?php
+require_once('Provincia.php');
+
 class Localidad {
   private $idlocalidad;
   private $nombre;
-  private $idprovincia;
+  private Provincia $provincia;
 
-  public function __construct($idlocalidad, $nombre, $idprovincia)
+  public function __construct($idlocalidad, $nombre, Provincia $provincia)
   {
     $this->idlocalidad = $idlocalidad;
     $this->nombre = $nombre;
-    $this->idprovincia = $idprovincia;
+    $this->provincia = $provincia;
   }
 
   /**
@@ -48,19 +50,19 @@ class Localidad {
   }
 
   /**
-   * Get the value of idprovincia
+   * Get the value of provincia
    */
-  public function getIdprovincia()
+  public function getProvincia()
   {
-    return $this->idprovincia;
+    return $this->provincia;
   }
 
   /**
-   * Set the value of idprovincia
+   * Set the value of provincia
    */
-  public function setIdprovincia($idprovincia): self
+  public function setProvincia($provincia): self
   {
-    $this->idprovincia = $idprovincia;
+    $this->provincia = $provincia;
 
     return $this;
   }

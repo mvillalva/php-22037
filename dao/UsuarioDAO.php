@@ -45,7 +45,47 @@ class UsuarioDAO {
             $listaUsu[] = $usu;
         }
 
-        return $listaUsu;    
+        return $listaUsu;
+    }
+
+    public function getUsuarioID($id) {
+        require_once("../dataBase/ConexionDB.php");
+        require_once("../model/Usuario.php");        
+
+        $con = new ConexionDB();
+        $con->conectar();
+        $result = $con->ejecutar("SELECT * FROM usuarios WHERE idusuario = $id");
+
+        while ($usuario = $result->fetch_assoc()) {                        
+            $usuObj = new Usuario(  $usuario["idusuario"]       , 
+                                    $usuario['clave']           ,
+                                    $usuario["nombreyapellido"]
+                                );
+            $usuObj->setIdUsuario($id);
+        }
+
+        return $usuObj;
+
+    }
+
+    public function getUsuarioNombre($usuario) {
+        require_once("../dataBase/ConexionDB.php");
+        require_once("../model/Usuario.php");        
+
+        $con = new ConexionDB();
+        $con->conectar();
+        $result = $con->ejecutar("SELECT * FROM usuarios WHERE usuario = '$usuario'");
+
+        while ($usuario = $result->fetch_assoc()) {                        
+            $usuObj = new Usuario(  $usuario["usuario"]         , 
+                                    $usuario['clave']           ,
+                                    $usuario["nombreyapellido"]
+                                );
+            $usuObj->setIdUsuario($usuario['idusuario']);
+        }
+
+        return $usuObj;
+
     }
 
 }

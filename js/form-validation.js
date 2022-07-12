@@ -18,3 +18,34 @@
     })
   }, false)
 }())
+
+let provincia = document.getElementById('provincia')
+
+provincia.addEventListener('change', (e) => {
+  let localidad = document.getElementById('localidad')
+  localidad.innerHTML = '<option value="">Seleccioná...</option>'  
+  html = localidad.innerHTML
+
+  if (e.target.value) {
+    data = {provincia: e.target.value }
+
+    fetch('../controller/getLocalidades.php', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+    })
+    .then(data => {
+      return data.json()
+    })
+    .then(resJson => {
+      if(resJson.status == 0) {
+        resJson.data.forEach(e => {
+          html += '<option value="' + e.id + '">'+e.nombre+'</option>'
+        });
+        localidad.innerHTML = html
+      }
+    })
+  }
+})

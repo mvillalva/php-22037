@@ -1,12 +1,13 @@
 <?php 
+require_once('Localidad.php');
+require_once('Usuario.php');
+
 class Pedido {
-    private $idPedido;
-    private $nombre;
-    private $apellido;
-    private $usuario;
+    private $idPedido;    
+    private Usuario $usuario;
     private $mail;
     private $lugarEntrega;
-    private $localidad;    
+    private Localidad $localidad;
     private $codPostal;
     private $formaDePago;
     private $tarjTitular;
@@ -14,14 +15,12 @@ class Pedido {
     private $tarjVto;
     private $tarjClave;
 
-    function __construct($idPedido, $nombre, $apellido, $usuario, $mail, $lugarEntrega, $localidad, $codPostal, $formaDePago, $tarjTitular, $tarjNumero, $tarjVto, $tarjClave) {
-        $this->idPedido     = $idPedido;
-        $this->nombre       = $nombre;
-        $this->apellido     = $apellido;
+    function __construct($idPedido, Usuario $usuario, $mail, $lugarEntrega, Localidad $localidad, $codPostal, $formaDePago, $tarjTitular, $tarjNumero, $tarjVto, $tarjClave) {
+        $this->idPedido     = $idPedido;        
         $this->usuario      = $usuario;
         $this->mail         = $mail;
         $this->lugarEntrega = $lugarEntrega;
-        $this->localidad    = $localidad;        
+        $this->localidad    = $localidad;
         $this->codPostal    = $codPostal;
         $this->formaDePago  = $formaDePago;
         $this->tarjTitular  = $tarjTitular;
@@ -47,46 +46,6 @@ class Pedido {
     public function setIdPedido($idPedido)
     {
         $this->idPedido = $idPedido;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of nombre
-     */ 
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set the value of nombre
-     *
-     * @return  self
-     */ 
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of apellido
-     */ 
-    public function getApellido()
-    {
-        return $this->apellido;
-    }
-
-    /**
-     * Set the value of apellido
-     *
-     * @return  self
-     */ 
-    public function setApellido($apellido)
-    {
-        $this->apellido = $apellido;
 
         return $this;
     }

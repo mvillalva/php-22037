@@ -23,7 +23,7 @@
                 <img class="d-block mx-auto mb-4" src="../images/logo.jpg" alt="Logo caba" width="72" height="72">
                 <h1>Gracias por su visita!</h1>
                 <div class="mt-5">
-                    <a class="btn btn-warning btn-lg" href="../index.php">Ingresar <i class="fas fa-sign-in-alt"></i> </a>
+                    <a class="btn btn-warning btn-lg" href="../index.php"><i class="fas fa-home"></i> Inicio</a>
                 </div>
             </div>
         </div>

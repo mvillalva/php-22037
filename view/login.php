@@ -1,3 +1,14 @@
+<?php
+    if (!isset($_SESSION)) {
+		session_start();
+	}
+    
+    // Si esta definida la variable de session 'user' y tengo datos en dicha variable, redirecciono a inicio.php
+    if (isset($_SESSION['user']) && $_SESSION['user']) {
+        header("Location: ../index.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +25,7 @@
 
 <body class="text-center bg-grad">
     <div class="container">
-        <form class="form-signin bg-light rounded-3 shadow" action="./controller/checklogin.php" method="POST">
+        <form class="form-signin bg-light rounded-3 shadow" action="../controller/checklogin.php" method="POST">
             <img class="mb-4" src="../images/logo.jpg" width="72" height="72" />
             <h1 class="h3 mb-3">Ingresar al sistema</h1>
             <div class="field">
@@ -25,14 +36,15 @@
                 <i class="icon fas fa-key"></i>
                 <input type="password" name="inputPassword" class="form-control" placeholder="Ingrese su clave" required />
             </div>
-            <p class="my-2 text-danger">Usuario o password incorrectos, por favor vuelva a ingresarlos.</p>
             <button type="submit" class="btn btn-primary btn-lg btn-block w-100 mb-3">Ingresar <i class="fas fa-sign-in-alt"></i></button>
             <div> 
                 <a class="link" href="altaUsuario.php">Registrate</a>
-            </div>            
+            </div>
         </form>
     </div>
 
     <!-- Optional JavaScript -->
     <?php include('footer.php') ?>
 </body>
+
+</html>

@@ -13,7 +13,7 @@
 
     if ($loginValido) {
         $_SESSION['user'] = $usu;
-        header("Location: ../view/inicio.php");
+        header("Location: ../index.php");
         exit;
     } else {
         header("Location: ../view/loginError.php");

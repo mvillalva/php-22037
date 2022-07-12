@@ -1,26 +1,37 @@
 <?php
 function menu() {
+  $opcion = '<li><a href="view/login.php">Ingresar</a></li>';
+  $menuEspecial = '';
+
+  if (isset($_SESSION['user']) && $_SESSION['user']) {
+    $opcion = '<li><a href="view/logout.php">Salir</a></li>';
+    $menuEspecial = ' <li>
+                      <a href="#">Operaciones</a>
+                      <ul>
+                        <li>
+                          <a href="#">Usuarios</a>
+                          <ul>
+                            <li><a href="view/altaUsuario.php">Crear Usuario</a></li>
+                            <li><a href="view/listadoUsuarios.php">Listado de Usuarios</a></li>                            
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="#">Pedidos</a>
+                          <ul>
+                            <li><a href="view/pedido.php">Cargar Pedido</a></li>                            
+                            <li><a href="view/listadoPedidos.php">Listado de Pedidos</a></li>
+                          </ul>
+                        </li>
+                      </ul>';
+  }
+
   $html = '<nav>
             <div id="header">          
               <ul class="bar">
                 <li>
                   <a><i class="fas fa-bars"></i></a>          
                   <ul class="nav">
-                    <li><a href="inicio.php">Inicio</i></a></li>
-                    <li>
-                      <a href="#">Usuarios</a>
-                      <ul>
-                        <li><a href="altaUsuario.php">Crear Usuario</a></li>
-                        <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#">Pedidos</a>
-                      <ul>
-                        <li><a href="pedido.php">Crear Pedido</a></li>                            
-                        <li><a href="listadoPedidos.php">Listado de Pedidos</a></li>
-                      </ul>
-                    </li>
+                    <li><a href="index.php">Inicio</i></a></li>
                     <li>
                       <a href="#">Servicios</a>
                       <ul>
@@ -38,29 +49,26 @@ function menu() {
                       </ul>
                     </li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="logout.php">Salir</a></li>
+                    '.$menuEspecial.$opcion.'
                   </ul>
                 </li>
               </ul>
             </div>
           </nav>';
-  
+
   return $html;
 }
 
 function menu_bs($active) {
   $html = '<nav class="navbar navbar-expand-md navbar-light bg-warning fixed-top" aria-label="navBar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="inicio.php">PHP</a>
+                <a class="navbar-brand" href="../index.php">PHP</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample04">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="inicio.php">Inicio</a>
-                        </li>
                         <li class="nav-item dropdown multi-level-dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown04">
@@ -71,28 +79,9 @@ function menu_bs($active) {
                         <li class="nav-item dropdown multi-level-dropdown">
                         <a class="nav-link active dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item '.($active == 'c'? 'active':'').'" navbar href="pedido.php">Crear Pedido</a></li>
+                                <li><a class="dropdown-item '.($active == 'c'? 'active':'').'" navbar href="pedido.php">Cargar Pedido</a></li>
                                 <li><a class="dropdown-item '.($active == 'p'? 'active':'').'" href="listadoPedidos.php">Lista de Pedidos</a></li>
                             </ul>
-                        </li>                        
-                        <li class="nav-item dropdown multi-level-dropdown">
-                            <a class="nav-link active dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                                <li><a class="dropdown-item" navbar href="#">Venta</a></li>
-                                <li><a class="dropdown-item" navbar href="#">Colocación</a></li>
-                                <li><a class="dropdown-item" navbar href="#">Reparación</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">Acerca de</a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="inicio.php#nosotros">Nosotros</a></li>
-                                <li><a class="dropdown-item" href="inicio.php#historia">Historia</a></li>
-                                <li><a class="dropdown-item" href="inicio.php#mision">Nuestra Misión</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="logout.php">Salir</a>

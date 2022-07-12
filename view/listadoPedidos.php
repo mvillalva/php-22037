@@ -34,31 +34,35 @@ require_once("menu.php");
                     <thead class="table-dark">
                         <tr>
                             <th scope="col">#ID</th>
-                            <th scope="col">Apellido</th>
-                            <th scope="col">Nombre</th>
+                            <th scope="col">Nombre y Apellido</th>                            
                             <th scope="col">e-mail</th>
                             <th scope="col">Dirección</th>
                             <th scope="col">Localidad</th>
                             <th scope="col">Provincia</th>
                             <th scope="col">Código Postal</th>
+                            <th scope="col">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         require_once("../dao/PedidoDAO.php");
+
                         $pedidoDAO = new PedidoDAO();
-                        $listaPedidos = $pedidoDAO->listarPedidos();
+                        $listaPedidos = $pedidoDAO->listarPedidos();                        
 
                         foreach ($listaPedidos as $pedido) {
                             $html = "<tr>";
                             $html .= "<td>" . $pedido->getIdPedido()      . "</td>";
-                            $html .= "<td>" . $pedido->getApellido()      . "</td>";
-                            $html .= "<td>" . $pedido->getNombre()        . "</td>";
+                            $html .= "<td>" . $pedido->getUsuario()->getNombreYApellido() . "</td>";                            
                             $html .= "<td>" . $pedido->getMail()          . "</td>";
                             $html .= "<td>" . $pedido->getLugarEntrega()  . "</td>";
-                            $html .= "<td>" . $pedido->getLocalidad()     . "</td>";
-                            $html .= "<td>" . $pedido->getProvincia()     . "</td>";
+                            $html .= "<td>" . $pedido->getLocalidad()->getNombre() . "</td>";
+                            $html .= "<td>" . $pedido->getLocalidad()->getProvincia()->getNombre() . "</td>";
                             $html .= "<td>" . $pedido->getCodPostal()     . "</td>";
+                            $html .= "<td>";
+                            $html .= "  <button class='btn btn-sm btn-warning text-white' title='Modificar' data-id='".$pedido->getIdPedido()."'><i class='fas fa-pencil-alt'></i></button>";
+                            $html .= "  <button class='btn btn-sm btn-danger' title='Borrar' data-id='".$pedido->getIdPedido()."'><i class='fas fa-trash-alt'></i></button>";
+                            $html .= "</td>";
                             $html .= "</tr>";
                             echo $html;
                         }

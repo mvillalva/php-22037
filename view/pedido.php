@@ -1,6 +1,18 @@
 <?php
     require_once('../controller/checkSession.php');
-    require_once("menu.php");
+    require_once('menu.php');
+    require_once('../dao/UsuarioDAO.php');
+
+    $usuarioDAO = new UsuarioDAO();
+    $usuarioObj = $usuarioDAO->getUsuarioNombre($_SESSION['user']);
+    
+    $usuario = '';
+    $nombre= '';
+
+    if (!empty($usuarioObj)) {
+        $usuario = $usuarioObj->getUsuario();
+        $nombre = $usuarioObj->getNombreYApellido();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,9 +23,8 @@
     <title>PHP - Registro de Pedido</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <?php include('header.php') ?>
     <link rel="stylesheet" href="../css/estilo.css" />
-    <script src="https://kit.fontawesome.com/e547f827f8.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-grad">
@@ -33,34 +44,24 @@
                 <form class="needs-validation" novalidate action="../controller/checkPedido.php" method="POST">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="firstName">Nombre</label>
-                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Tu nombre" value="" required />
-                            <div class="invalid-feedback">Debe ingresar su nombre.</div>
+                            <label for="username">Usuario</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" value="<?= $usuario; ?>" readonly />
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="lastName">Apellido</label>
-                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Tu apellido" value="" required />
-                            <div class="invalid-feedback">Faltó ingresar el apellido.</div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 mb-3">
-                            <label for="username">Nombre de Usuario</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">@</span>
-                                </div>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Usuario" required />
-                                <div class="invalid-feedback" style="width: 100%">Faltó ingresar el usuario.</div>
-                            </div>
-                        </div>
+                            <label for="firstName">Nombre y Apellido</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Tu nombre" value="<?= $nombre; ?>" readonly />
+                        </div>                                            
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="email">Email <span class="text-muted">(Opcional)</span></label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="tumail@gmail.com" />
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="tumail@gmail.com" />
+                            </div>
                             <div class="invalid-feedback">El e-mail es inválido.</div>
                         </div>
                     </div>
@@ -141,9 +142,8 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/form-validation.js"></script>
-    <script src="../js/functions.js"></script>
+    <?php include('footer.php') ?>
+    <script src="../js/form-validation.js"></script>    
 </body>
 
 </html>
