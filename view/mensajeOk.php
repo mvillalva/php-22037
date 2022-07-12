@@ -38,7 +38,7 @@
             <div class="py-4 text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
                 <h2 class="text-success mb-5">La operación se realizó correctamente</h2>
-                <a class="btn btn-outline-primary btn-lg" href="inicio.php">Inicio</a>
+                <a class="btn btn-outline-primary btn-lg" href="../index.php">Inicio</a>
             </div>
         </div>
     </div>
