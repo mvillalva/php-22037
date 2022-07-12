@@ -8,7 +8,7 @@ class LocalidadDAO {
 
         $con = new ConexionDB();
         $con->conectar();
-        $result = $con->ejecutar("SELECT * FROM localidades");
+        $result = $con->ejecutar("SELECT * FROM localidades ORDER BY nombre");
         
         $provDAO = new ProvinciaDAO();
 
@@ -35,7 +35,7 @@ class LocalidadDAO {
 
         $con = new ConexionDB();
         $con->conectar();
-        $result = $con->ejecutar("SELECT * FROM localidades WHERE idprovincia = $id");
+        $result = $con->ejecutar("SELECT * FROM localidades WHERE idprovincia = $id ORDER BY nombre");
         
         $provDAO = new ProvinciaDAO();
 
