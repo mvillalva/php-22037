@@ -8,25 +8,25 @@ function menu() {
                   <ul class="nav">
                     <li><a href="inicio.php">Inicio</i></a></li>
                     <li>
+                      <a href="#">Usuarios</a>
+                      <ul>
+                        <li><a href="altaUsuario.php">Crear Usuario</a></li>
+                        <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#">Pedidos</a>
+                      <ul>
+                        <li><a href="pedido.php">Crear Pedido</a></li>                            
+                        <li><a href="listadoPedidos.php">Listado de Pedidos</a></li>
+                      </ul>
+                    </li>
+                    <li>
                       <a href="#">Servicios</a>
                       <ul>
                         <li><a href="#">Venta</a></li>
                         <li><a href="#">Colocación</a></li>
                         <li><a href="#">Reparación</a></li>
-                        <li>
-                          <a href="#">Pedidos</a>
-                          <ul>
-                            <li><a href="pedido.php">Crear Pedido</a></li>                            
-                            <li><a href="listadoPedidos.php">Listado de Pedidos</a></li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a href="#">Usuarios</a>
-                          <ul>
-                            <li><a href="altaUsuario.php">Crear Usuario</a></li>
-                            <li><a href="listadoUsuarios.php">Listado de Usuarios</a></li>                            
-                          </ul>
-                        </li>
                       </ul>
                     </li>
                     <li>
@@ -60,6 +60,20 @@ function menu_bs($active) {
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="inicio.php">Inicio</a>
+                        </li>
+                        <li class="nav-item dropdown multi-level-dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                <li><a class="dropdown-item '.($active == 'a'? 'active':'').'" navbar href="altaUsuario.php">Crear Usuario</a></li>
+                                <li><a class="dropdown-item '.($active == 'u'? 'active':'').'" href="listadoUsuarios.php">Lista de Usuarios</a></li>                                        
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown multi-level-dropdown">
+                        <a class="nav-link active dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                                <li><a class="dropdown-item '.($active == 'c'? 'active':'').'" navbar href="pedido.php">Crear Pedido</a></li>
+                                <li><a class="dropdown-item '.($active == 'p'? 'active':'').'" href="listadoPedidos.php">Lista de Pedidos</a></li>
+                            </ul>
                         </li>                        
                         <li class="nav-item dropdown multi-level-dropdown">
                             <a class="nav-link active dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Servicios</a>
@@ -67,20 +81,6 @@ function menu_bs($active) {
                                 <li><a class="dropdown-item" navbar href="#">Venta</a></li>
                                 <li><a class="dropdown-item" navbar href="#">Colocación</a></li>
                                 <li><a class="dropdown-item" navbar href="#">Reparación</a></li>
-                                <li class="dropdown-item dropdown-submenu p-0">
-                                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                        <li><a class="dropdown-item '.($active == 'c'? 'active':'').'" navbar href="pedido.php">Crear Pedido</a></li>
-                                        <li><a class="dropdown-item '.($active == 'p'? 'active':'').'" href="listadoPedidos.php">Lista de Pedidos</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item dropdown-submenu p-0">
-                                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Usuarios</a>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                                        <li><a class="dropdown-item '.($active == 'a'? 'active':'').'" navbar href="altaUsuario.php">Crear Usuario</a></li>
-                                        <li><a class="dropdown-item '.($active == 'u'? 'active':'').'" href="listadoUsuarios.php">Lista de Usuarios</a></li>                                        
-                                    </ul>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
