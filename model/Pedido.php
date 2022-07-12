@@ -6,8 +6,7 @@ class Pedido {
     private $usuario;
     private $mail;
     private $lugarEntrega;
-    private $localidad;
-    private $provincia;
+    private $localidad;    
     private $codPostal;
     private $formaDePago;
     private $tarjTitular;
@@ -15,15 +14,14 @@ class Pedido {
     private $tarjVto;
     private $tarjClave;
 
-    function __construct($idPedido, $nombre, $apellido, $usuario, $mail, $lugarEntrega, $localidad, $provincia, $codPostal, $formaDePago, $tarjTitular, $tarjNumero, $tarjVto, $tarjClave) {
+    function __construct($idPedido, $nombre, $apellido, $usuario, $mail, $lugarEntrega, $localidad, $codPostal, $formaDePago, $tarjTitular, $tarjNumero, $tarjVto, $tarjClave) {
         $this->idPedido     = $idPedido;
         $this->nombre       = $nombre;
         $this->apellido     = $apellido;
         $this->usuario      = $usuario;
         $this->mail         = $mail;
         $this->lugarEntrega = $lugarEntrega;
-        $this->localidad    = $localidad;
-        $this->provincia    = $provincia;
+        $this->localidad    = $localidad;        
         $this->codPostal    = $codPostal;
         $this->formaDePago  = $formaDePago;
         $this->tarjTitular  = $tarjTitular;
@@ -169,26 +167,6 @@ class Pedido {
     public function setLocalidad($localidad)
     {
         $this->localidad = $localidad;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of provincia
-     */ 
-    public function getProvincia()
-    {
-        return $this->provincia;
-    }
-
-    /**
-     * Set the value of provincia
-     *
-     * @return  self
-     */ 
-    public function setProvincia($provincia)
-    {
-        $this->provincia = $provincia;
 
         return $this;
     }

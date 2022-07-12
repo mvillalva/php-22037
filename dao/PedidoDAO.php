@@ -7,20 +7,19 @@ class PedidoDAO {
         $conexionDB->conectar();
     
         $sql = "INSERT INTO pedidos 
-        (`nombre`, `apellido`, `usuario`, `mail`, `lugarentrega`, `localidad`, `provincia`, `codpostal`, `formadepago`, `tarjtitular`, `tarjnumero`, `tarjvto`, `tarjclave`) 
+        (`nombre`, `apellido`, `usuario`, `mail`, `lugarentrega`, `localidad`, `codpostal`, `formadepago`, `tarjtitular`, `tarjnumero`, `tarjvto`, `tarjclave`) 
         VALUES (
         '{$pedido->getNombre()}', 
         '{$pedido->getApellido()}', 
         '{$pedido->getUsuario()}', 
         '{$pedido->getMail()}', 
         '{$pedido->getLugarentrega()}', 
-         {$pedido->getLocalidad()},
-         {$pedido->getProvincia()}, 
-         '{$pedido->getCodpostal()}', 
-         '{$pedido->getFormadepago()}', 
-         '{$pedido->getTarjtitular()}', 
+         {$pedido->getLocalidad()},         
+        '{$pedido->getCodpostal()}', 
+        '{$pedido->getFormadepago()}', 
+        '{$pedido->getTarjtitular()}', 
          {$pedido->getTarjnumero()}, 
-         '{$pedido->getTarjvto()}', 
+        '{$pedido->getTarjvto()}', 
          {$pedido->getTarjclave()})";
         
         
@@ -45,8 +44,7 @@ class PedidoDAO {
                                     $pedido["usuario"]      ,
                                     $pedido["mail"]         ,
                                     $pedido["lugarentrega"] ,
-                                    $pedido["localidad"]    ,
-                                    $pedido["provincia"]    ,
+                                    $pedido["localidad"]    ,                                    
                                     $pedido["codpostal"]    , 
                                     "","","","","");
 
