@@ -18,7 +18,7 @@
     <title>PHP - Alta de usuario</title>
 
     <!-- bootstrap -->
-    <?php include('header.php'); ?>
+    <?php include('templates/header.php'); ?>
     <link href="../css/signin.css" rel="stylesheet" />
 </head>
 
@@ -83,7 +83,7 @@
     </div>
 
     <!-- bootstrap -->
-    <?php include('footer.php'); ?>
+    <?php include('templates/footer.php'); ?>
 </body>
 
 </html>

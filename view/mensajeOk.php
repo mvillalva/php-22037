@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <?php include('header.php') ?>
+    <?php include('templates/header.php') ?>
     <link href="../css/estilo.css" rel="stylesheet" />
 </head>
 
@@ -44,7 +44,7 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include('footer.php') ?>
+    <?php include('templates/footer.php') ?>
     <script src="../js/menu.js"></script>
 </body>
 

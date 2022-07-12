@@ -23,7 +23,7 @@
     <title>PHP - Registro de Pedido</title>
 
     <!-- Bootstrap core CSS -->
-    <?php include('header.php') ?>
+    <?php include('templates/header.php') ?>
     <link rel="stylesheet" href="../css/estilo.css" />
 </head>
 
@@ -76,10 +76,10 @@
 
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <?php include('combos/provincias.php'); ?>
+                            <?php include('templates/provincias.php'); ?>
                         </div>
                         <div class="col-md-5 mb-3">
-                            <?php include('combos/localidades.php'); ?>
+                            <?php include('templates/localidades.php'); ?>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="zip">Cod.Postal</label>
@@ -142,7 +142,7 @@
         </div>
     </div>
 
-    <?php include('footer.php') ?>
+    <?php include('templates/footer.php') ?>
     <script src="../js/form-validation.js"></script>    
 </body>
 
