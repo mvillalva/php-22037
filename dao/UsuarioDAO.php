@@ -19,6 +19,24 @@ class UsuarioDAO {
         
     }
 
+    public function validarUsu($usu) {
+        require_once("../dataBase/ConexionDB.php");
+
+        $conexionDB = new ConexionDB();
+        $conexionDB->conectar();
+
+        $sql ="SELECT * FROM usuarios WHERE usuario = '$usu'";
+        $conexionDB->ejecutar($sql);
+
+        $existeUsu = $conexionDB->cantFilas() > 0;
+        if ($existeUsu) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
+
     public function guardarUsuario($usuario, $password, $nombre) {
         require_once("../dataBase/ConexionDB.php");
 
@@ -27,9 +45,17 @@ class UsuarioDAO {
 
         $sql="INSERT INTO usuarios(usuario, clave, nombreyapellido) VALUES ('$usuario','$password','$nombre')";
 
-        $conexionDB->ejecutar($sql);
+        try {
 
-        return $conexionDB->cantFilas() > 0;
+            $conexionDB->ejecutar($sql);
+            return $conexionDB->cantFilas() > 0;
+
+        } catch (Exception $e) {
+            
+            return false;
+
+        }
+
     }
 
     public function listarUsuarios() {

@@ -33,7 +33,7 @@
         }
     ?>
     <div class="container <?php if ($sesion_activa) { echo 'mt-4'; } ?>">
-        <form class="form-user from-max-width shadow bg-light rounded-3" action="../controller/checkUsuario.php" method="post" class="needs-validation">
+        <form class="form-user from-max-width shadow bg-light rounded-3 needs-validation" id="form-alta" action="../controller/checkUsuario.php" method="post">
             <div class=" text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
                 <h2>Alta de Usuario</h2>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-12 mb-2 field">
                     <i class="icon fas fa-key"></i>
-                    <input type="password" class="form-control" id="passwordc" name="passwordc" placeholder="Confirme la contraseña ingresada" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <input type="password" class="form-control" id="password-c" name="password-c" placeholder="Confirme la contraseña ingresada" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <div class="invalid-feedback">
                         La contraseña debe tener más de 8 dígitos, contener letras minúsuculas y mayúsculas y algún dígito
                     </div>
@@ -84,6 +84,7 @@
 
     <!-- bootstrap -->
     <?php include('templates/footer.php'); ?>
+    <script src="../js/user-validation.js"></script>
 </body>
 
 </html>

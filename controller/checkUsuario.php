@@ -6,13 +6,19 @@
     require_once("../dao/UsuarioDAO.php");
 
     $usuarioDAO = new UsuarioDAO();
-    $guardoOk = $usuarioDAO->guardarUsuario($usuario, $password, $nombre);
-
-    if ($guardoOk) {
-        header("Location: ../view/mensajeOk.php");
+    $existeUsu = $usuarioDAO->validarUsu($usuario);    
+    if ($existeUsu){
+        header("Location: ../view/mensajeUsuario.php");
         exit;    
     } else {
-        header("Location: ../view/mensajeError.php");
-        exit;    
+        $guardoOk = $usuarioDAO->guardarUsuario($usuario, $password, $nombre);
+    
+        if ($guardoOk) {
+            header("Location: ../view/mensajeOk.php");
+            exit;    
+        } else {
+            header("Location: ../view/mensajeError.php");
+            exit;    
+        }
     }
 ?>
