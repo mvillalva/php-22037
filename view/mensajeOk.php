@@ -1,5 +1,5 @@
 <?php
-    require_once("menu.php");
+    require_once("templates/menu.php");
 
     if (!isset($_SESSION)) {
 		session_start();
@@ -44,8 +44,7 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include('templates/footer.php') ?>
-    <script src="../js/menu.js"></script>
+    <?php include('templates/footer.php') ?>    
 </body>
 
 </html>

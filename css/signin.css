@@ -81,7 +81,7 @@ body {
   min-height: 100vh;
 }
 
-.dropdown-submenu {
+/* .dropdown-submenu {
   position: relative;
 }
 
@@ -127,4 +127,4 @@ body {
   -webkit-border-radius: 6px 0 6px 6px;
   -moz-border-radius: 6px 0 6px 6px;
   border-radius: 6px 0 6px 6px;
-}
+} */

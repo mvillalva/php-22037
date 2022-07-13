@@ -1,5 +1,5 @@
 <?php
-    require_once("menu.php");
+    require_once("templates/menu.php");
 
     if (!isset($_SESSION)) {
 		session_start();

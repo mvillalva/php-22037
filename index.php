@@ -2,7 +2,7 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    require_once("view/menu.php");
+    require_once("view/templates/menu.php");
 ?>
 
 <!DOCTYPE html>

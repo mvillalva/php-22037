@@ -1,6 +1,6 @@
 <?php
     require_once('../controller/checkSession.php');
-    require_once('menu.php');
+    require_once('templates/menu.php');
     require_once('../dao/UsuarioDAO.php');
 
     $usuarioDAO = new UsuarioDAO();
