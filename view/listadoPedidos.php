@@ -60,8 +60,8 @@ require_once("templates/menu.php");
                             $html .= "<td>" . $pedido->getLocalidad()->getProvincia()->getNombre() . "</td>";
                             $html .= "<td>" . $pedido->getCodPostal()     . "</td>";
                             $html .= "<td>";
-                            $html .= "  <button class='btn btn-sm btn-warning text-white' title='Modificar' data-id='".$pedido->getIdPedido()."'><i class='fas fa-pencil-alt'></i></button>";
-                            $html .= "  <button class='btn btn-sm btn-danger' title='Borrar' data-id='".$pedido->getIdPedido()."'><i class='fas fa-trash-alt'></i></button>";
+                            $html .= "  <button class='btn btn-sm btn-warning text-white' name='btnEditar' title='Modificar' data-id='".$pedido->getIdPedido()."'><i class='fas fa-pencil-alt'></i></button>";
+                            $html .= "  <button class='btn btn-sm btn-danger' name='btnBorrar' title='Borrar' data-id='".$pedido->getIdPedido()."' data-bs-toggle='modal' data-bs-target='#confirma'><i class='fas fa-trash-alt'></i></button>";
                             $html .= "</td>";
                             $html .= "</tr>";
                             echo $html;
@@ -75,8 +75,41 @@ require_once("templates/menu.php");
         </div>
     </div>
 
+    <div class="modal fade" id="confirma" tabindex="-1" aria-labelledby="mensajeLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="modal-header" class="modal-header bg-warning">
+                    <h5 id="modal-title" class="modal-title" id="mensajeLabel">Atención!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="texto-confirma"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnCancelar" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnOK" type="button" data-bs-dismiss="modal" class="btn btn-success">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="mensaje" tabindex="-1" aria-labelledby="mensajeLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="mensaje-header" class="modal-header bg-success">
+                    <h5 class="modal-title" id="mensajeLabel">Información!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="texto-mensaje"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <?php include('templates/footer.php'); ?>
+    <script src="../js/pedido.js"></script>
 </body>
 
 </html>

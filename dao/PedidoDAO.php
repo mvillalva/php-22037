@@ -63,6 +63,18 @@ class PedidoDAO {
         return $listPedidos;
 
     }
+
+    public function eliminarPedido($id) {
+        require_once("../dataBase/ConexionDB.php");
+        $conexionDB = new ConexionDB();
+        $conexionDB->conectar();
+    
+        $sql = "DELETE FROM pedidos WHERE idpedido = $id";
+                
+        $conexionDB->ejecutar($sql);
+
+        return $conexionDB->cantFilas() > 0;
+    }
 }
 
 ?>
