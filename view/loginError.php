@@ -14,7 +14,7 @@
 
 <body class="text-center bg-grad">
     <div class="container">
-        <form class="form-signin bg-light rounded-3 shadow" action="./controller/checklogin.php" method="POST">
+        <form class="form-signin bg-light rounded-3 shadow" action="../controller/checklogin.php" method="POST">
             <img class="mb-4" src="../images/logo.jpg" width="72" height="72" />
             <h1 class="h3 mb-3">Ingresar al sistema</h1>
             <div class="field">
