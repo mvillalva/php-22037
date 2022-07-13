@@ -1,11 +1,11 @@
-<?php 
-    require_once("templates/menu.php");
-    
-    if (!isset($_SESSION)) {
-		session_start();
-	}
-    
-    $sesion_activa = isset($_SESSION['user']);
+<?php
+require_once("templates/menu.php");
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+$sesion_activa = isset($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +23,18 @@
 </head>
 
 <body class="bg-grad">
-    <?php        
-        if ($sesion_activa) {
-        ?>
-            <header>
-                <?= menu_bs('a'); ?>
-            </header>
-        <?php
-        }
+    <?php
+    if ($sesion_activa) {
     ?>
-    <div class="container <?php if ($sesion_activa) { echo 'mt-4'; } ?>">
+        <header>
+            <?= menu_bs('a'); ?>
+        </header>
+    <?php
+    }
+    ?>
+    <div class="container <?php if ($sesion_activa) {
+                                echo 'mt-4';
+                            } ?>">
         <form class="form-user from-max-width shadow bg-light rounded-3 needs-validation" id="form-alta" action="../controller/checkUsuario.php" method="post">
             <div class=" text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
@@ -80,6 +82,20 @@
                 </div>
             </div>
         </form>
+
+        <div class="modal fade" id="mensaje" tabindex="-1" aria-labelledby="mensajeLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-warning">
+                        <h5 class="modal-title" id="mensajeLabel">Atención!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensaje-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- bootstrap -->
