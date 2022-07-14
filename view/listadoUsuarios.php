@@ -19,7 +19,7 @@ require_once("templates/menu.php");
 
 <body class="bg-grad">
     <header>
-        <?= menu_bs('u'); ?>
+        <?= menu_bs(); ?>
     </header>
 
     <div class="d-flex justify-content-center align-items-center my-7">
@@ -36,7 +36,9 @@ require_once("templates/menu.php");
                         <tr>
                             <th scope="col">#ID</th>
                             <th scope="col">Usuario</th>
+                            <th scope="col">Nombre</th>
                             <th scope="col">Contraseña</th>
+                            <th scope="col">Acción</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,17 +46,19 @@ require_once("templates/menu.php");
                         require_once("../dao/UsuarioDAO.php");
                         $dao = new UsuarioDAO();
                         $listaUsu = $dao->listarUsuarios();
-                        //var_dump($listaUsu);
 
-                        for ($i = 0; $i < count($listaUsu); $i++) {
-                        ?>
-                            <tr>
-                                <td><?php echo $listaUsu[$i]["idusuario"] ?></td>
-                                <td><?php echo $listaUsu[$i]["usuario"] ?></td>
-                                <td><?php echo $listaUsu[$i]["clave"] ?></td>
-                            </tr>
-
-                        <?php
+                        foreach ($listaUsu as $usuario) {
+                            $html = "<tr>";
+                            $html .= "<td>" . $usuario->getIdUsuario()          . "</td>";
+                            $html .= "<td>" . $usuario->getUsuario()            . "</td>";
+                            $html .= "<td>" . $usuario->getNombreYApellido()    . "</td>";
+                            $html .= "<td>" . $usuario->getClave()              . "</td>";
+                            $html .= "<td>";
+                            $html .= "  <button class='btn btn-sm btn-warning text-white' name='btnEditar' title='Modificar' data-id='".$usuario->getIdUsuario()."' data-bs-toggle='modal' data-bs-target='#pedido'><i class='fas fa-pencil-alt'></i></button>";
+                            $html .= "  <button class='btn btn-sm btn-danger' name='btnBorrar' title='Borrar' data-id='".$usuario->getIdUsuario()."' data-bs-toggle='modal' data-bs-target='#confirma'><i class='fas fa-trash-alt'></i></button>";
+                            $html .= "</td>";
+                            $html .= "</tr>";
+                            echo $html;
                         }
                         ?>
 

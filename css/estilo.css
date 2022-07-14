@@ -124,19 +124,24 @@ ul {
 
 .imagen {    
     position: relative;
-    top: 58px;
     margin: 0px; 
 }
 
-.imagen img {
+.imagen img {    
     object-fit: cover;
     width: 100%;
-    height: 200px;
+    height: 100vh;    
+}
+.texto-imagen {
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+    color: white;
+    font-size: 6rem;
+    transform: translate(0, -50%);
 }
 
-.texto {    
-    position: relative;
-    top: 58px;
+.texto {        
     margin: 0px 20px 20px 20px;
     text-align: justify;
 }
@@ -149,7 +154,7 @@ ul {
 #mision,
 #nosotros,
 #historia {
-  scroll-margin-block-start: 50px;
+  scroll-margin-block-start: 65px;
 }
 
 .bg-grad {
@@ -160,6 +165,32 @@ ul {
 .my-7 {
     margin-top: 5rem !important;
     margin-bottom: 2rem !important;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+  
+.field input {
+    padding-left: 35px !important;
+}
+
+.icon {
+    position: absolute;  
+    padding: 10px 8px;  
+    font-size: 1.2rem;
+    color: rgb(138, 138, 138);  
+    z-index: 3;
+}
+
+.icon-sm {
+    position: absolute;  
+    padding: 8px 5px;  
+    font-size: 1rem;
+    color: rgb(138, 138, 138);  
+    z-index: 3;
 }
 
 /* .dropdown-submenu {
@@ -211,13 +242,6 @@ ul {
 } */
 
 @media (min-width: 768px) {
-    .imagen,
-    .texto {
-        top: initial;
-    }
-    .imagen img {
-        height: 300px;
-    }
 
     .bar > li > a {
         display: none;

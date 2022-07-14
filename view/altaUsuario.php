@@ -27,7 +27,7 @@ $sesion_activa = isset($_SESSION['user']);
     if ($sesion_activa) {
     ?>
         <header>
-            <?= menu_bs('a'); ?>
+            <?= menu_bs(); ?>
         </header>
     <?php
     }

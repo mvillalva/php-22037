@@ -60,6 +60,7 @@ class UsuarioDAO {
 
     public function listarUsuarios() {
         require_once("../dataBase/ConexionDB.php");
+        require_once("../model/Usuario.php");
 
         $conexionDB = new ConexionDB();
         $conexionDB->conectar();
@@ -68,7 +69,14 @@ class UsuarioDAO {
         $result = $conexionDB->ejecutar($sql);
 
         while ($usu = $result->fetch_assoc()) {
-            $listaUsu[] = $usu;
+            $usuObj = new Usuario(
+                                    $usu['usuario'] ,
+                                    $usu['clave']   ,
+                                    $usu['nombreyapellido']
+                                );
+            $usuObj->setIdUsuario($usu['idusuario']);
+            
+            $listaUsu[] = $usuObj;
         }
 
         return $listaUsu;

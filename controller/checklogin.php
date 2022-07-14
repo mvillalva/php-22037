@@ -13,6 +13,7 @@
 
     if ($loginValido) {
         $_SESSION['user'] = $usu;
+        $_SESSION['name'] = $usuarioDAO->getUsuarioNombre($usu)->getNombreYApellido();
         header("Location: ../index.php");
         exit;
     } else {

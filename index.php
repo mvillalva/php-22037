@@ -13,21 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP - Proyecto Final</title>
 
+    <?php include('view/templates/header.php'); ?>
     <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-    <script src="https://kit.fontawesome.com/e547f827f8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <?= menu(); ?>
+        <?= menu_bs('p'); ?>
     </header>
 
-    <div class="imagen">
-        <hr class="hr1" />
-        <div class="banner">
-            <img src="images/fondo2.png" alt="" srcset="">
+    <div class="imagen">        
+        <div class="texto-imagen text-center w-100 text-uppercase fw-bold">
+            <p>PHP</p>            
         </div>
-        <hr class="hr2" />
+        <img src="https://picsum.photos/id/0/1366/400" alt="" srcset="">
     </div>
 
     <section>
@@ -109,6 +108,7 @@
             </article>
         </div>
     </section>
+    <?php include('view/templates/footer.php'); ?>
 </body>
 
 </html>

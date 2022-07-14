@@ -2,17 +2,17 @@ let confirma = document.getElementById('confirma')
 
 confirma.addEventListener('show.bs.modal', e => {  
   document.getElementById('texto-confirma').innerHTML = '¿Desea eliminar el pedido Nº ' + e.relatedTarget.dataset.id + '?'
-  document.getElementById('btnOK').dataset.id = e.relatedTarget.dataset.id
+  document.getElementById('btnSi').dataset.id = e.relatedTarget.dataset.id
 })
 
-let btnOk = document.getElementById('btnOK');
+let btnSi = document.getElementById('btnSi');
 
-btnOk.addEventListener('click', e =>{
+btnSi.addEventListener('click', e =>{
   
   data = {id: e.target.dataset.id}
   
   console.log(data)
-  fetch('../controller/deletePedido.php', {
+  fetch('../controller/borrarPedido.php', {
     method: 'POST',
     body: JSON.stringify(data)
   })

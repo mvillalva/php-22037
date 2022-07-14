@@ -16,7 +16,7 @@ require_once("templates/menu.php");
     <link rel="stylesheet" href="../css/estilo.css">
   </head>
   <body>
-    <?= menu_bs(''); ?>  
+    <?= menu_bs(); ?>  
     <!-- Optional JavaScript -->
     <?php include('templates/footer.php'); ?>
   </body>

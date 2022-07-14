@@ -1,6 +1,6 @@
 <?php 
 
-require_once('ConfigDB.php');
+require_once('../config/Config.php');
 
 class ConexionDB {
     private $host;
@@ -10,12 +10,13 @@ class ConexionDB {
     private $port;
     private $conexion;
 
-    function __construct($host=DB_HOST, $user=DB_USER, $password=DB_PASS, $databaseName=DB_DATABASENAME, $port=DB_PORT) {
-        $this->host=$host;
-        $this->user=$user;
-        $this->password=$password;
-        $this->databaseName=$databaseName;
-        $this->port=$port;
+    function __construct($host='', $user='', $password='', $databaseName='', $port='') {
+
+        $this->host         = $host         ? $host         : constant('DB_HOST');
+        $this->user         = $user         ? $user         : constant('DB_USER');
+        $this->password     = $password     ? $password     : constant('DB_PASS');
+        $this->databaseName = $databaseName ? $databaseName : constant('DB_DATABASENAME');
+        $this->port         = $port         ? $port         : constant('DB_PORT');
     }
 
     /**
