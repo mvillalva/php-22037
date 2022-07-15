@@ -27,8 +27,9 @@
             <div class="bg-dark opacity-75 p-3">
                 <p>PHP</p>
                 <?php 
-                    if(isset($_SESSION['name']) && $_SESSION['name']) {
-                        echo '<h1 class="text-warning">Bienvenido '.$_SESSION['name'].'</h1>';
+                    if(isset($_SESSION['user']) && $_SESSION['user']) {
+                        $usuario = isset($_SESSION['name'])?$_SESSION['name']:$_SESSION['user'];
+                        echo '<h1 class="text-warning">¡Bienvenido '.$usuario.'!</h1>';
                     }
                 ?>
             </div>
