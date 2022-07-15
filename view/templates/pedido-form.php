@@ -71,7 +71,7 @@
         </div>
         <div class="col-md-6 mb-3">
             <label for="cc-number">Número de la tarjeta</label>
-            <input type="text" class="form-control" id="cc-number" name="cc-number" placeholder="" required />
+            <input type="number" class="form-control" id="cc-number" name="cc-number" placeholder="" required />
             <div class="invalid-feedback">El n° es obligatorio.</div>
         </div>
     </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="col-md-3 mb-3">
             <label for="cc-cvv">Código</label>
-            <input type="text" class="form-control" id="cc-cvv" name="cc-cvv" placeholder="" required />
+            <input type="number" class="form-control" id="cc-cvv" name="cc-cvv" placeholder="" required />
             <div class="invalid-feedback">N° de seguridad obligatorio.</div>
         </div>
     </div>
