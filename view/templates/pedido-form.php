@@ -1,4 +1,7 @@
 <form class="needs-validation" novalidate action="../controller/altaPedido.php" method="POST">
+    <input type="text" id="idpedido" name="idpedido" hidden />
+    <input type="text" id="idusuario" name="idusuario" hidden />
+    <input type="text" id="accion" name="accion" value="Alta" hidden />
     <div class="row">
         <div class="col-md-6 mb-3">
             <label for="username">Usuario</label>
@@ -51,11 +54,11 @@
 
     <div class="row mb-3">
         <div class="col-12 col-sm-6 form-check d-flex justify-content-center">
-            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required />
+            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="c" checked required />
             <label class="form-check-label" for="credit">Tarjeta de Crédito</label>
         </div>
         <div class="col-12 col-sm-6 form-check d-flex justify-content-center">
-            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required />
+            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" value="d" required />
             <label class="form-check-label" for="debit">Mercado Pago</label>
         </div>
     </div>
@@ -88,7 +91,7 @@
     <hr class="mb-4" />
     <div class="row text-center">
         <div class="col">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Ingresar la Solicitud</button>
+            <button id="btnPedido" class="btn btn-primary btn-lg btn-block" type="submit">Ingresar la Solicitud</button>
         </div>
     </div>
 </form>

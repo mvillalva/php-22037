@@ -12,12 +12,12 @@ require_once("templates/menu.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <?php include('templates/header.php'); ?>
+    <?php include('templates/head.php'); ?>
     <link rel="stylesheet" href="../css/estilo.css">
   </head>
   <body>
     <?= menu_bs(); ?>  
     <!-- Optional JavaScript -->
-    <?php include('templates/footer.php'); ?>
+    <?php include('templates/scripts.php'); ?>
   </body>
 </html>

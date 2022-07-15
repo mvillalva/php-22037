@@ -1,13 +1,12 @@
 <?php 
-    $nombre = $_POST['firstName'];
-    $apellido = $_POST['lastName'];
+    $accion = $_POST['accion'];
+    $idPedido = isset($_POST['idpedido'])? $_POST['idpedido'] : null;
     $usuario = $_POST['username'];
     $mail = $_POST['email'];
     $lugarentrega = $_POST['address'];
     $localidad = $_POST['localidad'];
-    $provincia = $_POST['provincia'];
     $codpostal = $_POST['zip'];
-    $formadepago = $_POST['paymentMethod'];
+    $formadepago = $_POST['paymentMethod'];    
     $tarjtitular = $_POST['cc-name'];
     $tarjnumero = $_POST['cc-number'];
     $tarjvto = $_POST['cc-expiration'];
@@ -25,16 +24,24 @@
     $usuarioDAO = new UsuarioDAO();
     $usuarioObj = $usuarioDAO->getUsuarioNombre($usuario);
 
-    $pedido = new Pedido(null, $usuarioObj, $mail, $lugarentrega, $localidadObj, $codpostal, $formadepago, $tarjtitular, $tarjnumero, $tarjvto, $tarjclave);
+    $pedido = new Pedido($idPedido, $usuarioObj, $mail, $lugarentrega, $localidadObj, $codpostal, $formadepago, $tarjtitular, $tarjnumero, $tarjvto, $tarjclave);
     
     require_once("../dao/PedidoDAO.php");
 
     $pedidoDAO = new PedidoDAO();
-    $guardoOk = $pedidoDAO->guardarPedido($pedido);
 
-    if ($guardoOk) {
-        header("Location: ../view/mensajeOk.php");
-        exit;    
+    $operacionOk = false;
+
+    if($accion == 'Editar') {
+        $operacionOk = $pedidoDAO->editarPedido($pedido);
+    } elseif ($accion == 'Alta'){
+        $operacionOk = $pedidoDAO->altaPedido($pedido);
+    }
+
+    if ($operacionOk) {
+        if($accion == 'Alta') header("Location: ../view/mensajeOk.php");
+        elseif ($accion == 'Editar') header("Location: ../view/listadoPedidos.php");
+        exit;
     } else {
         header("Location: ../view/mensajeError.php");
         exit;    

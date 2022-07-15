@@ -13,7 +13,7 @@ require_once("templates/menu.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <?php include('templates/header.php'); ?>
+    <?php include('templates/head.php'); ?>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
@@ -111,7 +111,7 @@ require_once("templates/menu.php");
         <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content">
                 <div id="modal-header" class="modal-header bg-primary">
-                    <h5 id="modal-title" class="modal-title text-white" id="mensajeLabel">Edición</h5>
+                    <h5 id="modal-title" class="modal-title text-white" id="mensajeLabel"><i class="fa fa-edit"></i> Modificar</h5>
                     <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -122,7 +122,8 @@ require_once("templates/menu.php");
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include('templates/footer.php'); ?>
+    <?php include('templates/scripts.php'); ?>
+    <script src="../js/form-validation.js"></script>
     <script src="../js/pedido.js"></script>
 </body>
 

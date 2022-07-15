@@ -13,7 +13,7 @@ require_once("templates/menu.php");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <?php include('templates/header.php'); ?>
+    <?php include('templates/head.php'); ?>
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 
@@ -37,8 +37,7 @@ require_once("templates/menu.php");
                             <th scope="col">#ID</th>
                             <th scope="col">Usuario</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Contraseña</th>
-                            <th scope="col">Acción</th>
+                            <th scope="col">Contraseña</th>                            
                         </tr>
                     </thead>
                     <tbody>
@@ -53,10 +52,6 @@ require_once("templates/menu.php");
                             $html .= "<td>" . $usuario->getUsuario()            . "</td>";
                             $html .= "<td>" . $usuario->getNombreYApellido()    . "</td>";
                             $html .= "<td>" . $usuario->getClave()              . "</td>";
-                            $html .= "<td>";
-                            $html .= "  <button class='btn btn-sm btn-warning text-white' name='btnEditar' title='Modificar' data-id='".$usuario->getIdUsuario()."' data-bs-toggle='modal' data-bs-target='#pedido'><i class='fas fa-pencil-alt'></i></button>";
-                            $html .= "  <button class='btn btn-sm btn-danger' name='btnBorrar' title='Borrar' data-id='".$usuario->getIdUsuario()."' data-bs-toggle='modal' data-bs-target='#confirma'><i class='fas fa-trash-alt'></i></button>";
-                            $html .= "</td>";
                             $html .= "</tr>";
                             echo $html;
                         }
@@ -69,7 +64,7 @@ require_once("templates/menu.php");
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include('templates/footer.php'); ?>
+    <?php include('templates/scripts.php'); ?>
 </body>
 
 </html>

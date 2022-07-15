@@ -23,7 +23,7 @@
     <title>PHP - Registro de Pedido</title>
 
     <!-- Bootstrap core CSS -->
-    <?php include('templates/header.php') ?>
+    <?php include('templates/head.php') ?>
     <link rel="stylesheet" href="../css/estilo.css" />
 </head>
 
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <?php include('templates/footer.php') ?>
+    <?php include('templates/scripts.php') ?>
     <script src="../js/form-validation.js"></script>    
 </body>
 

@@ -18,7 +18,7 @@ $sesion_activa = isset($_SESSION['user']);
     <title>PHP - Alta de usuario</title>
 
     <!-- bootstrap -->
-    <?php include('templates/header.php'); ?>
+    <?php include('templates/head.php'); ?>
     <link href="../css/signin.css" rel="stylesheet" />
 </head>
 
@@ -99,7 +99,7 @@ $sesion_activa = isset($_SESSION['user']);
     </div>
 
     <!-- bootstrap -->
-    <?php include('templates/footer.php'); ?>
+    <?php include('templates/scripts.php'); ?>
     <script src="../js/user-validation.js"></script>
 </body>
 

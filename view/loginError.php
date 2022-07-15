@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <?php include('templates/header.php') ?>
+    <?php include('templates/head.php') ?>
     <link href="../css/signin.css" rel="stylesheet" />
 </head>
 
@@ -34,5 +34,5 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <?php include('templates/footer.php') ?>
+    <?php include('templates/scripts.php') ?>
 </body>

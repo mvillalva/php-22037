@@ -91,7 +91,7 @@ class UsuarioDAO {
         $result = $con->ejecutar("SELECT * FROM usuarios WHERE idusuario = $id");
 
         while ($usuario = $result->fetch_assoc()) {                        
-            $usuObj = new Usuario(  $usuario["idusuario"]       , 
+            $usuObj = new Usuario(  $usuario["usuario"]       , 
                                     $usuario['clave']           ,
                                     $usuario["nombreyapellido"]
                                 );
@@ -115,6 +115,7 @@ class UsuarioDAO {
                                     $usuario['clave']           ,
                                     $usuario["nombreyapellido"]
                                 );
+
             $usuObj->setIdUsuario($usuario['idusuario']);
         }
 

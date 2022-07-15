@@ -19,33 +19,38 @@
   }, false)
 }())
 
-let provincia = document.getElementById('provincia')
-
-provincia.addEventListener('change', (e) => {
+const getLocalidades = (id, idlocalidad=null) => {
   let localidad = document.getElementById('localidad')
   localidad.innerHTML = '<option value="">Seleccioná...</option>'  
   html = localidad.innerHTML
 
-  if (e.target.value) {
-    data = {provincia: e.target.value }
+  data = {provincia: id }
 
-    fetch('../controller/getLocalidades.php', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers:{
-          'Content-Type': 'application/json'
-        }
-    })
-    .then(data => {
-      return data.json()
-    })
-    .then(resJson => {
-      if(resJson.status == 0) {
-        resJson.data.forEach(e => {
-          html += '<option value="' + e.id + '">'+e.nombre+'</option>'
-        });
-        localidad.innerHTML = html
+  fetch('../controller/getLocalidades.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers:{
+        'Content-Type': 'application/json'
       }
-    })
+  })
+  .then(data => {
+    return data.json()
+  })
+  .then(resJson => {
+    if(resJson.status == 0) {
+      resJson.data.forEach(e => {
+        html += '<option value="' + e.id + '">'+e.nombre+'</option>'
+      });
+      localidad.innerHTML = html
+      if(idlocalidad) localidad.value = idlocalidad
+    }
+  })
+}
+
+let provincia = document.getElementById('provincia')
+
+provincia.addEventListener('change', (e) => {
+  if (e.target.value) {
+    getLocalidades(e.target.value)
   }
 })

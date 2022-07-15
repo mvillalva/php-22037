@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHP - Proyecto Final</title>
 
-    <?php include('view/templates/header.php'); ?>
+    <?php include('view/templates/head.php'); ?>
     <link href="css/estilo.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -108,7 +108,7 @@
             </article>
         </div>
     </section>
-    <?php include('view/templates/footer.php'); ?>
+    <?php include('view/templates/scripts.php'); ?>
 </body>
 
 </html>
