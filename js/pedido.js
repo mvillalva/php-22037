@@ -12,7 +12,7 @@
 
     btnSi.addEventListener('click', e =>{
       
-      data = {id: e.target.dataset.id}
+      let data = {id: e.target.dataset.id}
       
       console.log(data)
       fetch('../controller/borrarPedido.php', {
