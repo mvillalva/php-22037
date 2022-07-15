@@ -24,12 +24,14 @@
 
     <div class="imagen">        
         <div class="texto-imagen text-center w-100 text-uppercase fw-bold">
-            <p>PHP</p>
-            <?php 
-                if(isset($_SESSION['name']) && $_SESSION['name']) {
-                    echo '<h1 class="text-info">Bienvenido '.$_SESSION['name'].'</h1>';
-                }
-            ?>
+            <div class="bg-dark opacity-75 p-3">
+                <p>PHP</p>
+                <?php 
+                    if(isset($_SESSION['name']) && $_SESSION['name']) {
+                        echo '<h1 class="text-warning">Bienvenido '.$_SESSION['name'].'</h1>';
+                    }
+                ?>
+            </div>
         </div>
         <img src="https://picsum.photos/id/0/1366/400" alt="" srcset="">
     </div>
