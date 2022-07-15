@@ -42,13 +42,11 @@
             <div class="container">
                 <h4 class="mb-3">Tu pedido</h4>
                 <?php include('templates/pedido-form.php'); ?>
-            </div>
-            <footer class="my-4 pt-5 text-muted text-center text-small">
-                <p class="mb-1">&copy; 2017-2022 Codo a Codo</p>
-            </footer>
+            </div>            
         </div>
     </div>
 
+    <?php include('templates/footer.php'); ?>
     <?php include('templates/scripts.php') ?>
     <script src="../js/form-validation.js"></script>    
 </body>

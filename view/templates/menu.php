@@ -31,11 +31,11 @@ function menu_bs($origen='') {
     $menuLogin = '  <form class="d-flex flex-column flex-md-row align-items-center" action="'.$ruta1.'controller/checklogin.php" method="POST">
                         <div class="field me-2 mb-2 mb-md-0">
                             <i class="icon-sm fas fa-user"></i>
-                            <input name="inputEmail" class="form-control form-control-sm" type="text" placeholder="Usuario" aria-label="Username">
+                            <input name="inputEmail" class="form-control form-control-sm" type="text" placeholder="Usuario" aria-label="Username" required>
                         </div>
                         <div class="field me-2 mb-2 mb-md-0">
                             <i class="icon-sm fas fa-key"></i>
-                            <input name="inputPassword" class="form-control form-control-sm" type="password" placeholder="Contraseña" aria-label="Password">
+                            <input name="inputPassword" class="form-control form-control-sm" type="password" placeholder="Contraseña" aria-label="Password" required>
                         </div>
                         <div class="d-flex align-items-center align-self-start">
                             <button class="btn btn-outline-dark btn-sm me-2 mb-2 mb-md-0" type="submit">Ingresar</button>

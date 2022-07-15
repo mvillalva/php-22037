@@ -119,7 +119,7 @@ class PedidoDAO {
     
         $sql = "UPDATE pedidos
                 SET
-                    usuario         = '{$pedido->getUsuario()->getIdUsuario()}', 
+                    usuario         = {$pedido->getUsuario()->getIdUsuario()}, 
                     mail            = '{$pedido->getMail()}', 
                     lugarentrega    = '{$pedido->getLugarentrega()}', 
                     localidad       = {$pedido->getLocalidad()->getIdlocalidad()},         

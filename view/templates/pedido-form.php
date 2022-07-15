@@ -89,7 +89,7 @@
         </div>
     </div>
     <hr class="mb-4" />
-    <div class="row text-center">
+    <div class="row text-center mb-4">
         <div class="col">
             <button id="btnPedido" class="btn btn-primary btn-lg btn-block" type="submit">Ingresar la Solicitud</button>
         </div>

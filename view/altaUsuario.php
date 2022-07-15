@@ -19,7 +19,7 @@ $sesion_activa = isset($_SESSION['user']);
 
     <!-- bootstrap -->
     <?php include('templates/head.php'); ?>
-    <link href="../css/signin.css" rel="stylesheet" />
+    <link href="../css/estilo.css" rel="stylesheet" />
 </head>
 
 <body class="bg-grad">
@@ -32,9 +32,13 @@ $sesion_activa = isset($_SESSION['user']);
     <?php
     }
     ?>
-    <div class="container <?php if ($sesion_activa) {
-                                echo 'mt-4';
-                            } ?>">
+    <div class="container <?php 
+                            if ($sesion_activa) {
+                                echo 'pt-7 mb-4';
+                            } else {
+                                echo 'pt-5 vh-100';
+                            }
+                           ?>">
         <form class="form-user from-max-width shadow bg-light rounded-3 needs-validation" id="form-alta" action="../controller/checkUsuario.php" method="post">
             <div class=" text-center">
                 <img src="../images/logo.jpg" alt="Logo CABA" width="72" height="72" class="d-flex mx-auto mb-4">
@@ -99,6 +103,9 @@ $sesion_activa = isset($_SESSION['user']);
     </div>
 
     <!-- bootstrap -->
+    <?php 
+        if($sesion_activa) include_once('templates/footer.php');
+    ?>
     <?php include('templates/scripts.php'); ?>
     <script src="../js/user-validation.js"></script>
 </body>

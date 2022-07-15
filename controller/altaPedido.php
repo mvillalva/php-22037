@@ -39,8 +39,11 @@
     }
 
     if ($operacionOk) {
-        if($accion == 'Alta') header("Location: ../view/mensajeOk.php");
-        elseif ($accion == 'Editar') header("Location: ../view/listadoPedidos.php");
+        if($accion == 'Alta') {
+            header("Location: ../view/mensajeOk.php");
+        } elseif ($accion == 'Editar') {
+            header("Location: ../view/listadoPedidos.php");
+        }
         exit;
     } else {
         header("Location: ../view/mensajeError.php");

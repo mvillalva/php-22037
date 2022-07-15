@@ -121,7 +121,8 @@ require_once("templates/menu.php");
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
+    <?php include('templates/footer.php'); ?>
+    <!-- Optional JavaScript -->    
     <?php include('templates/scripts.php'); ?>
     <script src="../js/form-validation.js"></script>
     <script src="../js/pedido.js"></script>

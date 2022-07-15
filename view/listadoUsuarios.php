@@ -63,6 +63,7 @@ require_once("templates/menu.php");
         </div>
     </div>
 
+    <?php include('templates/footer.php'); ?>
     <!-- Optional JavaScript -->
     <?php include('templates/scripts.php'); ?>
 </body>

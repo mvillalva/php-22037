@@ -9,11 +9,11 @@
 
     <!-- Bootstrap CSS -->
     <?php include('templates/head.php') ?>
-    <link href="../css/signin.css" rel="stylesheet" />
+    <link href="../css/estilo.css" rel="stylesheet" />
 </head>
 
-<body class="text-center bg-grad">
-    <div class="container">
+<body class="text-center bg-grad vh-100 d-flex align-items-center">
+    <div class="container ">
         <form class="form-signin bg-light rounded-3 shadow" action="../controller/checklogin.php" method="POST">
             <img class="mb-4" src="../images/logo.jpg" width="72" height="72" />
             <h1 class="h3 mb-3">Ingresar al sistema</h1>

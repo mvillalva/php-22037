@@ -108,6 +108,7 @@
             </article>
         </div>
     </section>
+    <?php include('view/templates/footer.php'); ?>
     <?php include('view/templates/scripts.php'); ?>
 </body>
 
