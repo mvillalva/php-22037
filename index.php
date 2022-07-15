@@ -108,8 +108,50 @@
             </article>
         </div>
     </section>
+    
+    <div class="modal fade" id="mensaje" tabindex="-1" aria-labelledby="mensajeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div id="mensaje-header" class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="mensajeLabel">¡Información!</h5>
+                    <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center"><strong>Registrate!</strong> para loguearte o utilza los siguientes datos:</p>
+                    <div class="row">
+                        <div class="col-6 offset-3">
+                            <div>Usuario: prueba@prueba.com</div>
+                            <div>Contraseña: Prueba123</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer bg-dark text-light">
+                    <input type="checkbox" name="mostrar" id="mostrar">
+                    <label for="mostrar">No volver a mostrar</label>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php include('view/templates/footer.php'); ?>
     <?php include('view/templates/scripts.php'); ?>
+    <script>
+        <?php if(!isset($_SESSION['user'])) { ?>            
+            if (!localStorage.getItem('mostrar') || localStorage.getItem('mostrar') == '1' ) {
+                let myModal = new bootstrap.Modal(document.getElementById("mensaje"))
+                myModal.show()
+            }
+
+            document.getElementById('mostrar').addEventListener('click', e => {
+                if (e.target.checked) {
+                    localStorage.setItem('mostrar', '0')
+                } else {
+                    localStorage.setItem('mostrar', '1')
+                }
+            })
+        <?php 
+            }
+        ?>
+    </script>
 </body>
 
 </html>
