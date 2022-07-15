@@ -24,7 +24,12 @@
 
     <div class="imagen">        
         <div class="texto-imagen text-center w-100 text-uppercase fw-bold">
-            <p>PHP</p>            
+            <p>PHP</p>
+            <?php 
+                if(isset($_SESSION['name']) && $_SESSION['name']) {
+                    echo '<h1 class="text-info">Bienvenido '.$_SESSION['name'].'</h1>';
+                }
+            ?>
         </div>
         <img src="https://picsum.photos/id/0/1366/400" alt="" srcset="">
     </div>
@@ -108,7 +113,7 @@
             </article>
         </div>
     </section>
-    
+
     <div class="modal fade" id="mensaje" tabindex="-1" aria-labelledby="mensajeLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -116,14 +121,10 @@
                     <h5 class="modal-title" id="mensajeLabel">¡Información!</h5>
                     <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <p class="text-center"><strong>Registrate!</strong> para loguearte o utilza los siguientes datos:</p>
-                    <div class="row">
-                        <div class="col-6 offset-3">
-                            <div>Usuario: prueba@prueba.com</div>
-                            <div>Contraseña: Prueba123</div>
-                        </div>
-                    </div>
+                <div class="modal-body text-center">
+                    <p><strong>Registrate!</strong> para loguearte o utilza los siguientes datos:</p>                    
+                    <div>Usuario: prueba@prueba.com</div>
+                    <div>Contraseña: Prueba123</div>                    
                 </div>
                 <div class="modal-footer bg-dark text-light">
                     <input type="checkbox" name="mostrar" id="mostrar">
