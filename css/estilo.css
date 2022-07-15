@@ -159,7 +159,6 @@ ul {
 
 .bg-grad {
     background-image: linear-gradient(to bottom right, rgb(0, 140, 255), rgb(121, 245, 110));
-    min-height: 90vh;
 }
 
 .my-7 {
